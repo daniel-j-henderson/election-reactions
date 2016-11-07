@@ -1,4 +1,4 @@
-<!doctype html>
+
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
@@ -24,6 +24,32 @@
 
           <form action="php/submit_vote.php" class="highest-responses">
             <h3>Vote for a Top-5 Reaction</h3>
+
+            <?php
+               class MyDB extends SQLite3
+               {
+                  function __construct()
+                  {
+                     $this->open('../election.db');
+                  }
+               }
+               $db = new MyDB();
+               if(!$db){
+                  echo $db->lastErrorMsg();
+               } else {
+            //      echo "Opened database successfully\n";
+                }
+               echo "<fieldset>";
+               $ret = $db->query('select response, votes from responses order by votes desc limit 5');
+               while ($row = $ret->fetchArray()) {
+                  $response = $row['response'];
+                  $votes = $row['votes'];
+                  echo "<input name=\"submit\" type=\"submit\" value=\"$response $votes\">";
+               }
+               echo "</fieldset>";
+               
+               $db->close();
+            ?>
             <fieldset>
               <input name="submit" type="submit" value="previous response number one">
               <input name="submit" type="submit" value="previous response number two is much longer than response number one">

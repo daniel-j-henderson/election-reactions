@@ -1,18 +1,61 @@
+@font-face {
+  font-family: 'Tofino Regular';
+  src: url("../fonts/Tofino/Tofino Regular.otf");
+}
+
+@font-face {
+  font-family: 'Tofino Ultra';
+  src: url("../fonts/Tofino/Tofino Ultra.otf");
+}
+
+@font-face {
+  font-family: 'Tofino Black';
+  src: url("../fonts/Tofino/Tofino Black.otf");
+}
+
+@font-face {
+  font-family: 'Tofino Light';
+  src: url("../fonts/Tofino/Tofino Light.otf");
+}
+
+html, body {
+  font-family: "Tofino Regular";
+  color: white;
+  height: 100%;
+}
+
+body {
+  background: url("../img/bg.jpg") center center fixed no-repeat;
+}
+
 main {
   width: 100%;
-
+  img {
+    margin-bottom: 20px;
+  }
   display: flex;
   justify-content: space-around;
   .hillary {
     order: 0;
     width: 20%;
+    padding: $p-pad;
+    background-color: $h-blue;
   }
   .donald {
     order: 2;
     width: 20%;
+    padding: $p-pad;
+    background-color: $d-red;
+  }
+  section {
+    margin-bottom: 20px;
+    p {
+      margin: 0;
+    }
   }
   .responses {
-    padding-top: 20px;
+    padding-top: 0px;
+    margin-top: 0px;
     order: 1;
     width: 30%;
   }
@@ -23,25 +66,34 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  h4 {
+  h1 {
+    font-family: "Tofino Black";
+    font-size: 48px;
+  }
+  h3 {
+    font-family: "Tofino Light";
     width: 80%;
     min-width: 400px;
     text-align: center;
   }
+  margin-bottom: 28px;
 }
 
 .highest-responses {
-  margin-top: 40px;
+  margin-top: 0px;
+  margin-bottom: 20px;
   input {
     width: 100%;
     white-space: normal;
     margin-bottom: 8px;
+    padding: 8px;
   }
 }
 
 .custom-reaction {
   width: 100%;
   white-space: normal;
+  padding: 8px;
 }
 
 
@@ -65,3 +117,24 @@ header {
     }
   }
 }
+
+  .success {
+    height: 100%;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    h3 {
+      max-width: 500px;
+      min-width: 300px;
+      a {
+        color: $h-blue;
+        font-family: "Tofino Black";
+      }
+    }
+  }
+
+  footer {
+    font-size: 12px;
+    text-align: center;
+    margin: 8px;
+  }
