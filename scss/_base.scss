@@ -1,0 +1,67 @@
+main {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  .hillary {
+    order: 0;
+    width: 20%;
+  }
+  .donald {
+    order: 2;
+    width: 20%;
+  }
+  .responses {
+    padding-top: 20px;
+    order: 1;
+    width: 30%;
+  }
+}
+
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h4 {
+    width: 80%;
+    min-width: 400px;
+    text-align: center;
+  }
+}
+
+.highest-responses {
+  margin-top: 40px;
+  input {
+    width: 100%;
+    white-space: normal;
+    margin-bottom: 8px;
+  }
+}
+
+.custom-reaction {
+  width: 100%;
+  white-space: normal;
+}
+
+
+@media only screen and (max-width:550px) {
+  main {
+    width: 100%;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    .hillary {
+      order: 1;
+      width: 90%;
+    }
+    .donald {
+      order: 1;
+      width: 90%;
+    }
+    .responses {
+      order: 0;
+      width: 90%;
+    }
+  }
+}
